@@ -52,10 +52,10 @@ const Home = () => {
   const fetchWeather = async (city) => {
     if (city) {
       try {
-        const weatherResponse = await axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=c915e6e66dab25f5295a6355a032defc`);
+        const weatherResponse = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=c915e6e66dab25f5295a6355a032defc`);
         setCurrentWeather(weatherResponse.data);
         
-        const forecastResponse = await axios.get(`http://api.openweathermap.org/data/2.5/forecast?q=${city}&cnt=7&units=metric&appid=c915e6e66dab25f5295a6355a032defc`);
+        const forecastResponse = await axios.get(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&cnt=7&units=metric&appid=c915e6e66dab25f5295a6355a032defc`);
         setForecast(forecastResponse.data.list);
         
         setError('');
